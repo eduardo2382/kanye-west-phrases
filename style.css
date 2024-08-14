@@ -28,6 +28,7 @@ body{
     align-items: center;
     flex-direction: column;
 
+    overflow: hidden;
 }
 
 main{
@@ -77,8 +78,7 @@ button{
     cursor: pointer;
 }
 
-button:hover,
-button:focus{
+button:hover{
     background-color: var(--btn-active);
     color: var(--text);
 }
@@ -89,7 +89,7 @@ footer{
     position: fixed;
     bottom: 0;
 
-    padding: 10px;
+    padding: 20px 0px;
 
     display: flex;
     justify-content: center;
@@ -101,7 +101,7 @@ footer a{
 }
 
 i{
-    font-size: 1.7em;
+    font-size: 1.9em;
 
     color: var(--text-light);
 }
@@ -111,5 +111,5 @@ i:hover{
 }
 
 a:nth-child(1n){
-    margin-left: 10px;
+    margin-left: 15px;
 }
