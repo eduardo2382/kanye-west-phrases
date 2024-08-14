@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Montserrat:wght@400;500;600&family=Roboto:ital,wght@0,300;0,400;1,300&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Inter';
+    color: var(--text);
+}
+
+:root{
+    --text: #FFFFFF;
+    --text-light: rgba(255, 255, 255, 0.5);
+    --bg: #101010;
+    --main-bg: #0B0B0B;
+    --btn-inactive: #0B0B0B;
+    --btn-active: #000000;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+
+    background-color: var(--bg);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+main{
+    width: 80%;
+    max-width: 600px;
+
+    font-size: 1.1em;
+
+    padding: 25px;
+
+    background-color: var(--main-bg);
+
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+
+    border-radius: 5px;
+
+    text-align: center;
+}
+
+h1{
+    text-align: center;
+
+    margin-bottom: 20px;
+}
+
+p{
+    text-align: right;
+}
+
+button{
+    width: 80%;
+    max-width: 600px;
+
+    background-color: var(--btn-inactive);
+    border: none;
+
+    margin-top: 30px;
+
+    border-radius: 5px;
+
+    color: var(--text-light);
+
+    font-size: 1.3em;
+    font-weight: 600;
+    padding: 8px 0px;
+
+    cursor: pointer;
+}
+
+button:hover,
+button:focus{
+    background-color: var(--btn-active);
+    color: var(--text);
+}
+
+footer{
+    width: 100%;
+
+    position: fixed;
+    bottom: 0;
+
+    padding: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer a{
+    text-decoration: none;
+}
+
+i{
+    font-size: 1.7em;
+
+    color: var(--text-light);
+}
+
+i:hover{
+    color: var(--text);
+}
+
+a:nth-child(1n){
+    margin-left: 10px;
+}
