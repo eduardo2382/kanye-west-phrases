@@ -39,7 +39,7 @@ body{
     right: 20px;
     top: 20px;
 
-    padding: 6px 8px;
+    padding: 8px 8px;
 
     display: flex;
     flex-direction: row;
@@ -53,12 +53,12 @@ body{
     content: '';
     display: block;
 
-    width: 26px;
+    width: 24px;
     height: 2px;
 
     position: absolute;
-    left: 9px;
-    top: 26px;
+    left: 46px;
+    top: 29px;
 
     background-color: white;
 
@@ -70,10 +70,12 @@ body{
     height: 18px;
 
     border-radius: 2px;
+
+    cursor: pointer;
 }
 
 .flag:nth-child(2n){
-    margin-left: 6px;
+    margin-left: 8px;
 }
 
 .br{
@@ -146,7 +148,7 @@ main{
     max-width: 600px;
 
     transform: translate(-50%, -50%);
-    position: relative;
+    position: absolute;
     top: 50%;
     left: 50%;
 
