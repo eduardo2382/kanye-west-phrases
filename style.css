@@ -55,8 +55,7 @@ main{
     font-size: 1.3em;
     font-weight: 400;
 
-    position: relative;
-    right: -120px;
+
 
     margin-top: 10px;
 }
@@ -68,7 +67,7 @@ button{
     background-color: var(--btn-inactive);
     border: none;
 
-    margin-top: 15px;
+    margin-top: 20px;
 
     border-radius: 5px;
 
