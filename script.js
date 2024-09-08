@@ -1,4 +1,4 @@
-const btn = document.querySelector('button')
+const btn = document.querySelector('.btnNewPhrase')
 const phrase = document.querySelector('.phrase')
 
 btn.addEventListener('click', ()=>{
