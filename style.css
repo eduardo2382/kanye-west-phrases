@@ -94,11 +94,22 @@ footer{
     padding: 20px 0px;
 
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-footer a{
+footer p{
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: 500;
+
+    color: var(--text-light);
+
+    margin-bottom: 10px;
+}
+
+a{
     text-decoration: none;
 }
 
@@ -112,6 +123,6 @@ i:hover{
     color: var(--text);
 }
 
-a:nth-child(1n){
+a:nth-child(2n){
     margin-left: 15px;
 }
