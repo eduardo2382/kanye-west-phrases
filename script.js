@@ -1,5 +1,5 @@
 const btn = document.querySelector('.btnNewPhrase')
-const phrase = document.querySelector('.phrase')
+const elementPhrase = document.querySelector('.phrase')
 
 const flagBr = document.querySelector('.br')
 const flagUsa = document.querySelector('.usa')
@@ -37,17 +37,20 @@ function toggleLanguage(){
     let languageBar = document.querySelector(".languageBar")
 
     if(currentLanguage == 'en'){
+        translatePhrase('current', 'pt-br')
         currentLanguage = 'pt-br'
-        translationPage()
+        translatePage()
         languageBar.style.left = '10px'
     } else{
+        translatePhrase('current', 'en')
         currentLanguage = 'en'
-        translationPage()
+        translatePage()
+        
         languageBar.style.left = '46px'
     }
 }
 
-function translationPage(){
+function translatePage(){
     languages.forEach((item)=>{
         if(item.language == currentLanguage){
             btn.innerText = item.btnNewPhrase
@@ -56,6 +59,17 @@ function translationPage(){
     })
 }
 
+async function translatePhrase(text='current', language){
+    if(text=='current'){
+        let newPhrase = await fetch(`https://api.mymemory.translated.net/get?q=${elementPhrase.innerText}&langpair=${currentLanguage}|${language}`).then(reponse => reponse.json())
+
+        elementPhrase.innerText = newPhrase.responseData.translatedText
+    } else{
+        let newPhrase = await fetch(`https://api.mymemory.translated.net/get?q=${text}&langpair=en|${language}`).then(reponse => reponse.json())
+
+        return newPhrase.responseData.translatedText
+    }
+}
 
 async function getPhrase() {
     try{
@@ -63,14 +77,17 @@ async function getPhrase() {
 
         loadPhrase(phrase.quote)
     } catch(e){
-        phrase.innerHTML = ''
-        phrase.innerText = 'Sem frases'
+        elementPhrase.Phrase.innerHTML = ''
+        elementPhrase.innerText = 'Sem frases'
     }
 }
 
 async function loadPhrase(text){
-    phrase.innerText = text
-
+    if(currentLanguage == 'pt-br'){
+        elementPhrase.innerText = await translatePhrase(text, 'pt-br')
+    } else{
+        elementPhrase.innerText = text
+    }
 }
 
 getPhrase()
